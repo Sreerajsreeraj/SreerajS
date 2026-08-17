@@ -207,13 +207,13 @@
   /* PROJECTS */
   .proj-grid{
     display:grid;
-    grid-template-columns:repeat(3, 1fr);   /* 3 across on desktop; change to 2 if that's the real intent */
+    grid-template-columns:repeat(3, 1fr);
     gap:20px;
-    align-items:stretch;                     /* forces every card in a row to match the tallest card's height */
+    align-items:stretch;
   }
   .proj-card{
     display:flex;
-    flex-direction:column;                   /* lets us pin expand-hint to the bottom */
+    flex-direction:column;
     border:1px solid var(--border);
     border-radius:18px;
     padding:28px;
@@ -233,7 +233,7 @@
   .proj-full ul{list-style:none;}
   .proj-full li{position:relative; padding-left:18px; margin-bottom:8px; color:var(--muted); font-size:13px;}
   .proj-full li::before{content:'—'; position:absolute; left:0; color:var(--teal);}
-  .expand-hint{font-family:var(--mono); font-size:10.5px; color:var(--muted); margin-top:auto; padding-top:14px;}  /* margin-top:auto pushes this to the bottom of the flex column */
+  .expand-hint{font-family:var(--mono); font-size:10.5px; color:var(--muted); margin-top:auto; padding-top:14px;}
 
   /* CERTS */
   .cert-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
