@@ -205,8 +205,22 @@
   .log-list li::before{content:'›'; position:absolute; left:0; color:var(--teal);}
 
   /* PROJECTS */
-  .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-  .proj-card{border:1px solid var(--border); border-radius:18px; padding:28px; background:var(--card-dark); transition:.3s; cursor:pointer;}
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);   /* 3 across on desktop; change to 2 if that's the real intent */
+    gap:20px;
+    align-items:stretch;                     /* forces every card in a row to match the tallest card's height */
+  }
+  .proj-card{
+    display:flex;
+    flex-direction:column;                   /* lets us pin expand-hint to the bottom */
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:28px;
+    background:var(--card-dark);
+    transition:.3s;
+    cursor:pointer;
+  }
   .proj-card:hover{border-color:var(--teal); transform:translateY(-4px); box-shadow:0 24px 50px -25px rgba(34,224,196,0.25);}
   .proj-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;}
   .proj-name{font-family:var(--heading); font-size:18px; font-weight:700; max-width:70%;}
@@ -219,7 +233,7 @@
   .proj-full ul{list-style:none;}
   .proj-full li{position:relative; padding-left:18px; margin-bottom:8px; color:var(--muted); font-size:13px;}
   .proj-full li::before{content:'—'; position:absolute; left:0; color:var(--teal);}
-  .expand-hint{font-family:var(--mono); font-size:10.5px; color:var(--muted); margin-top:14px;}
+  .expand-hint{font-family:var(--mono); font-size:10.5px; color:var(--muted); margin-top:auto; padding-top:14px;}  /* margin-top:auto pushes this to the bottom of the flex column */
 
   /* CERTS */
   .cert-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
